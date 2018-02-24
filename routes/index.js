@@ -5,11 +5,22 @@ const Post = require('../models/post');
 // get all posts
 router.get('/posts', (req, res, next) => {
   Post.find({}, function(err, posts) {
-    if(err) console.log(err);
+    if(err) {
+      console.log(err)
+      res.sendStatus(500)
+    }
 
     res.json(posts)
   });
 });
+
+// get tokens
+router.get('/tokens', (req, res, next) => {
+  res.json({
+    linkedIn: process.env.LINKED_IN
+  })
+});
+
 
 
 //Create new post
