@@ -6,6 +6,13 @@ const PostSchema = new Schema({
     picUrl: String,
     type: String,
     description: String,
+    author: {
+        pic: String,
+        firstName: String,
+        lastName: String,
+        id: String,
+    },
+    hashtags: [String],
     company: {
         name: String
     },
@@ -15,8 +22,9 @@ const PostSchema = new Schema({
     contact: {
         email: String,
         phone: Number
-    }
-});
+    },
+},{ timestamps: { createdAt: 'created_at' } }
+);
 
 const Post = mongoose.model('Post', PostSchema);
 
