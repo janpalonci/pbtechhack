@@ -79,10 +79,10 @@
             
           <ul class="navbar-nav text-uppercase">
             <li class="nav-item">
-              <a class="nav-link" onclick='handleClickFilter("class")' style='cursor:pointer'>Companies</a>
+              <a class="nav-link" onclick='handleClickFilter("company")' style='cursor:pointer'>Companies</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" onclick='handleClickFilter("company")' style='cursor:pointer'>Classrooms</a>
+              <a class="nav-link" onclick='handleClickFilter("class")' style='cursor:pointer'>Classrooms</a>
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link js-scroll-trigger" >Engineering</a>
@@ -100,7 +100,7 @@
       <div class="container">
         <div class="intro-text">
           <div class="intro-lead-in font-weight-bold animated fadeInDown">PBC STEM</div>
-          <div class="intro-heading text-uppercase font-weight-bold animated fadeInDown">Impacting the generation of tomorrow</div>
+          <div class="intro-heading text-uppercase font-weight-bold animated fadeInDown">Impact the generation of tomorrow</div>
              <a class="btn btn-primary btn-xl text-uppercase  animated fadeInLeft" 
              style='border-radius: 40px;'
              onclick='handleClickTeacher("company")'>
@@ -126,36 +126,55 @@
       
 
 <!-- Modal -->
+<!-- Modal -->
 <button id="post-card-toggle" class="btn btn-primary">Post</button>
+<div class='post-card animated ' id="post-card-loggedIn" style='top: 10%;'>
+  <h2>Post your card</h2>
 
-	 <div class='post-card animated fadeInLeft' id="post-card-loggedIn" style='top: 10%;'>
-		 <h2>Post your card</h2>
-		 <form>
-			 <input id="card-first-name" type="text" name="fistName" placeholder="Your name" />
-			 <input id="card-last-name" type="text" name="lastName" placeholder="Your last name" />
-			 <input id="card-type" type="text" name="type" placeholder="Teacher or Professional" />
-			 <input id="card-title" type="text" name="title" placeholder="Title" />
-			 <input id="card-picture-url" type="text" name="picUrl" placeholder="Picture URL" />
-			 <input id="card-email" type="email" name="email" placeholder="Email" />
-			 <input id="card-phone" type="url" name="phone" placeholder="Phone" />
-			 <textarea id="card-description" placeholder="Description" name="description"></textarea>
-			 <input id="card-hashtags" type="text" name="hashtags" placeholder="#hashtags">
-			 <input type="button" id="post-card-submit" value="Post!" />
-			 <input type="button" id="post-card-cancel" value="Cancel" />
-		 </form>
-	 </div>
+  <form>
+    <div class="card-type">
+       <span>I am</span>
+       <br>
+     <input id="card-classroom" type="radio" name="type" checked onchange="radioChanged()"/> <span>Teacher</span>
+     <br>
+    <input id="card-pro" type="radio" name="type"  onchange="radioChanged()"/> <span>Professional</span>
+    </div>
+    <div id="card-pro-selected">
+      <span>I offer</span>
+      <br>
+      <input type="checkbox" id="card-internship"> <span>Internship</span>
+      <br>
+      <input type="checkbox" id="card-externship"> <span>Externship</span>
+      <br>
+      <input type="checkbox" id="card-mentorship"> <span>Mentorship</span>
+    </div>
+    <input id="card-first-name" type="text" name="fistName" placeholder="Your name" />
+    <input id="card-last-name" type="text" name="lastName" placeholder="Your last name" />
 
-	 <div class='post-card animated fadeInLeft' id="post-card-loggedOut">
-		<h2>Post your card</h2>
- <span>Please login in first</span>
- <br>
- <script type="in/Login"></script>
- <br>
- <fb:login-button
-	 scope="public_profile,email"
-	 onlogin="checkLoginState()">
- </fb:login-button>
-	</div>
+    <input id="card-title" type="text" name="title" placeholder="Title" />
+    <input id="card-picture-url" type="text" name="picUrl" placeholder="Picture URL" />
+    <input id="card-email" type="email" name="email" placeholder="Email" />
+    <input id="card-phone" type="url" name="phone" placeholder="Phone" />
+    <textarea id="card-description" placeholder="Description" name="description"></textarea>
+    <input id="card-hashtags" type="text" name="hashtags" placeholder="#stem,#pbc">
+    <input type="button" id="post-card-submit" value="Post" />
+    <input type="button" class="post-card-cancel" value="Cancel" />
+  </form>
+</div>
+
+<div class='post-card animated ' id="post-card-loggedOut">
+ <h2>Post your card</h2>
+<span>Please login in first</span>
+<br>
+<script type="in/Login"></script>
+<br>
+<!-- <fb:login-button
+scope="public_profile,email"
+onlogin="checkLoginState()">
+</fb:login-button> -->
+<br><br>
+<input type="button" class="post-card-cancel" value="Cancel" />
+</div>
    
 
     

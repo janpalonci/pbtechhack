@@ -1,8 +1,12 @@
 #post-card-toggle {
   position: fixed;
   top: 50%;
-  left: 0;
+  left: -10px;
   transform: rotate(90deg);
+}
+
+#card-pro-selected {
+  display: none;
 }
 
 #post-card-loggedIn {
@@ -14,6 +18,8 @@
 }
 
 .post-card {
+  overflow: scroll;
+  max-height: 80%;
   position: fixed;
   top: 35%;
   z-index: 10;
@@ -34,7 +40,7 @@
   font-size: 18px;
   font-weight: 100;
   padding: 20px;
-  margin: -30px -30px 30px -30px;
+  margin: -30px -30px 0px -30px;
 }
 
 .post-card input[type="text"],
@@ -89,4 +95,11 @@
 .post-card input[type="submit"]:hover {
   background: linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
   background-color: #34CACA;
+}
+
+.card-type span {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #797979;
+  font-size: 18px;
+  font-weight: 100;
 }

@@ -9,26 +9,26 @@ checkLoginState = () => {
 };
 
 checkStatus = (data) => {
-	console.log("statusChangeCallback called!");
-	console.log("Data: " + JSON.stringify(data));
-	let status = false;
-	if(data.status === 'connected') {
-		window.Cookies.set('facebook', 'true', { expires: 2 });
-		userID = data.authResponse.userID;
-		accessToken = data.authResponse.accessToken;
-		status = true;
-		$('#post-card-loggedIn').show();
-		$('#post-card-loggedOut').hide();
-		console.log("Connected facebook!");
-		console.log(`ID: ${userID}`);
-	}
-	else {
-		console.log("not logged in to facebook");
-		FB.login(data => {
-			console.log("Login response:" + JSON.stringify(data));
-		});
-	}
-	return status;
+	// console.log("statusChangeCallback called!");
+	// console.log("Data: " + JSON.stringify(data));
+	// let status = false;
+	// if(data.status === 'connected') {
+	// 	window.Cookies.set('facebook', 'true', { expires: 2 });
+	// 	userID = data.authResponse.userID;
+	// 	accessToken = data.authResponse.accessToken;
+	// 	status = true;
+	// 	$('#post-card-loggedIn').show();
+	// 	$('#post-card-loggedOut').hide();
+	// 	console.log("Connected facebook!");
+	// 	console.log(`ID: ${userID}`);
+	// }
+	// else {
+	// 	console.log("not logged in to facebook");
+	// 	FB.login(data => {
+	// 		console.log("Login response:" + JSON.stringify(data));
+	// 	});
+	// }
+	// return status;
 };
 
 shareFB = () => {

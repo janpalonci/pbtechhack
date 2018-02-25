@@ -104,7 +104,7 @@ class Feed extends HTMLElement {
         let authorPicUrl = (post.author && post.author.picUrl) ? post.author.picUrl: "./assets/img_avatar.png";
         let hashtags = '';
         post.hashtags.forEach(hashtag=>hashtags+=`<a href='#' onclick='return window.search("${hashtag}")'>${hashtag} </a> `)
-        let internshipBadge = (post.hashtags.join().includes('mentor')) ? `<div class='badge-card'>INTERNSHIP</div>` : '';
+        let internshipBadge = (post.hashtags.join().includes('intern')) ? `<div class='badge-card'>INTERNSHIP</div>` : '';
         let postTemplate =`
          <div class="col-lg-6 portfolio-item p-4">
             ${internshipBadge}
@@ -135,9 +135,9 @@ class Feed extends HTMLElement {
                         <i class="fa fa-linkedin-square" style='transform: scale(1.5); margin-right:5px'></i>
                         Share
                 </button>
-                <a class='btn btn-outline-primary' href='mailto: ${post.contact.email}'>
+                <button class='btn btn-outline-primary' onclick='contact("${post.contact.email}",${post.contact.number})' href='#'>
                     Contact
-                </a>
+                </button>
                 
             </div>
 
@@ -150,6 +150,40 @@ class Feed extends HTMLElement {
         $(this).prepend(postTemplate);
     }
 
+}
+
+contact= (email,number)=>{
+    console.log('contact')
+    // event.preventDefault()
+    let el = document.createElement('span')
+    el.innerHTML='<i class="fa fa-phone p-5" style="transform: scale(3.5)"></i><br>How do you want to contact? '
+   
+    if(!email) email = 'example@gmail.com'
+    if(!number) number = 3021234123;
+    swal({
+        content: el,
+        buttons: {
+            cancel: true,
+          phone: {text:"PHONE"},
+          email: {text:"EMAIL"}
+        },
+      })
+      .then((value) => {
+        switch (value) {
+       
+          case "email":
+          window.location.href = "mailto:" + email;
+            break;
+       
+          case "phone":
+          window.location.href = "tel:" + number;
+            break;
+       
+          default:
+            
+        }
+      });
+      return false
 }
 
 window.customElements.define('main-feed', Feed);

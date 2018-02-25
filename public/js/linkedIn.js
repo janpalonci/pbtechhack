@@ -16,9 +16,16 @@ authorizeUser = () => {
 }
 
 getProfileData = () => {
-	window.Cookies.set('linkedin', 'true', { expires: 2 });
-	$('#post-card-loggedIn').show();
-	$('#post-card-loggedOut').hide();
+	console.log('getProfileData')
+	let loggedInLinkedIn = window.Cookies.get('linkedin');
+	if(!loggedInLinkedIn){
+		$('#post-card-loggedIn').show();
+		$('#post-card-loggedOut').hide();
+		window.Cookies.set('linkedin', 'true', { expires: 2 });
+	}
+
+	
+	
 	console.log('getting profile data');
 	IN.API.Raw("people/~?format=json").method("GET").body().result((data) => {
 		$('#card-first-name').val(data.firstName);
@@ -57,6 +64,9 @@ shareLinkedIn = (postId) => {
 		console.log("query string: " + queryString);
 		IN.API.Raw().url(url).method("POST").body(queryString).result((data) => {
 			console.log('share callback: ' + data.updateUrl);
+			var win = window.open(data.updateUrl, '_blank');
+			win.focus();
+			swal("Good job!", "You shared this!", "success");
 		}).error(onError);
 	}
 	else {
