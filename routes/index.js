@@ -3,6 +3,10 @@ const router  = express.Router();
 const Post = require('../models/post');
 
 // get all posts
+router.get('/', (req, res, next)=>{
+  res.sendFile(path.join(__dirname + '/index.html'))
+})
+
 router.get('/posts', (req, res, next) => {
   Post.find({}, function(err, posts) {
     if(err) {
@@ -27,7 +31,7 @@ router.get('/tokens', (req, res, next) => {
 router.post('/posts', (req,res,next)=>{
     let body = req.body;
 
-    console.log(req.body)
+    console.log(body)
 
     let newPost = new Post(body);
 
