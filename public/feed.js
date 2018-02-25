@@ -8,7 +8,7 @@ class Feed extends HTMLElement {
       this.state = {
           posts : [],
           filters: {
-              type: 'class'
+              type: null
           }
       }
 
@@ -82,7 +82,10 @@ class Feed extends HTMLElement {
         if(this.state.filters.search){
             let value = this.state.filters.search.toLowerCase();
 
-            skip = ( post.title.toLowerCase().includes(value) || post.description.toLowerCase().includes(value))
+            skip = ( post.title.toLowerCase().includes(value)
+             || post.description.toLowerCase().includes(value)
+             || post.hashtags.join().toLowerCase().includes(value)
+            )
              ? false : true;
         }
 
@@ -99,10 +102,13 @@ class Feed extends HTMLElement {
         if(! this.filter(post)) return; //filter
         
         let authorPicUrl = (post.author && post.author.picUrl) ? post.author.picUrl: "./assets/img_avatar.png";
-
+        let hashtags = '';
+        post.hashtags.forEach(hashtag=>hashtags+=`<a href='#' onclick='return window.search("${hashtag}")'>${hashtag} </a> `)
+        let internshipBadge = (post.hashtags.join().includes('mentor')) ? `<div class='badge-card'>INTERNSHIP</div>` : '';
         let postTemplate =`
          <div class="col-lg-6 portfolio-item p-4">
-            <div class="card h-100 ">
+            ${internshipBadge}
+            <div class="card h-100 " id='${post._id}'>
             <img class="card-img-top" src="${post.picUrl}" alt="">
             <div class="card-body">
                 <h4 class="card-title">
@@ -111,13 +117,28 @@ class Feed extends HTMLElement {
                 <p class="card-text">${post.description}</p>
             </div>
 
-            <div class="chip m-3">
-            <img src="${authorPicUrl}" alt="Person" width="96" height="96">
-                ${post.author.firstName} ${post.author.lastName}
+            
 
-            <a class='btn btn-outline-primary' href='mailto: ${post.contact.email}'>
-                   Contact
-            </a>
+
+
+            <div class='p-3'>${hashtags} </div>
+
+            
+            <div class="chip m-3">
+                <img src="${authorPicUrl}" alt="Person" width="96" height="96">
+                    ${post.author.firstName} ${post.author.lastName}
+
+                
+                <button onclick='shareLinkedIn("${post._id}")'
+                    class='btn btn-outline-primary' 
+                        >
+                        <i class="fa fa-linkedin-square" style='transform: scale(1.5); margin-right:5px'></i>
+                        Share
+                </button>
+                <a class='btn btn-outline-primary' href='mailto: ${post.contact.email}'>
+                    Contact
+                </a>
+                
             </div>
 
                 
@@ -139,10 +160,19 @@ handleClickFilter = (filter) =>{
 }
 
 
-search = ()=>{
-    let value = $('#search')[0].value;
+search = (hashtag)=>{
+    let value;
+    if(hashtag){
+        value = hashtag;
+        $('#search').val(hashtag)
+    }else{
+        value = $('#search').val();
+    }
+
     feed.state.filters.search = value;
     feed.softRefresh();
+
+    return false;
 }
 
 handleClickTeacher = (filter) =>{

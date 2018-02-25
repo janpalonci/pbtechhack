@@ -23,7 +23,9 @@
     <!-- Custom styles for this template -->
     <link href="css/agency.css" rel="stylesheet">
     <link href="scss/form.min.css" rel="stylesheet">
-		<link href="scss/slider.min.css" rel="stylesheet">
+    <link href="scss/slider.min.css" rel="stylesheet">
+    <link href="scss/badge.min.css" rel="stylesheet">
+    
 
 
 
@@ -68,8 +70,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <div class='input-group'>
-              <input onkeyup='search()' id='search' class='input-group-text' type="text" name="search" placeholder="Search.."></input>
-              <button  onclick='search()' class='btn btn-primary'>
+              <input style='border-radius: 0'
+              onkeyup='search()' id='search' class='input-group-text' type="text" name="search" placeholder="Search.."></input>
+              <button style='border-radius: 0' onclick='search()' class='btn btn-primary'>
                   <i class="fa fa-search"></i>
               </button>
           </div>
@@ -214,6 +217,8 @@
     <script src="js/agency.min.js"></script>
     <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

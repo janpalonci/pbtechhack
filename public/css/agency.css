@@ -1,7 +1,7 @@
 .chip {
   display: flex;
   align-items: center;
-  padding: 0 25px;
+  padding: 0 5px 0 25px;
   height: 50px;
   font-size: 16px;
   line-height: 50px;
@@ -21,14 +21,15 @@
   border-radius: 50%;
 }
 
-.card{
-  
-}
 
-.card a{
+.card a,.card button {
   border-radius: 20px;
-  margin-left: auto;
+
   align-self: center;
+}
+.card button{
+  margin-right: 5px;
+  margin-left: auto;
 }
 
 

@@ -34,16 +34,18 @@ checkAuth = () => {
 	return authorized;
 }
 
-shareLinkedIn = () => {
+shareLinkedIn = (postId) => {
 	if(checkAuth()) {
 		console.log("share stuff");
+
+		let post = window.feed.state.posts.find( post => post._id === postId)
 		let payload = {
-			'comment':'user comment',
+			'comment':'',
 			'content':{
-				'title':'test title',
-				'description':'test description',
-				'submitted-url':'https://google.com',
-				'submitted-image-url':'https://cdn.pixabay.com/photo/2017/06/06/22/46/mediterranean-cuisine-2378758_960_720.jpg',
+				'title':post.title,
+				'description':post.description,
+				'submitted-url':'https://www.palmbeachschools.org/stem/',
+				'submitted-image-url':post.picUrl,
 			},
 			'visibility':{
 				'code':'anyone'
