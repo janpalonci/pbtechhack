@@ -64,8 +64,8 @@ shareLinkedIn = (postId) => {
 		console.log("query string: " + queryString);
 		IN.API.Raw().url(url).method("POST").body(queryString).result((data) => {
 			console.log('share callback: ' + data.updateUrl);
-			var win = window.open(data.updateUrl, '_blank');
-			win.focus();
+			// var win = window.open(data.updateUrl, '_blank');
+			// win.focus();
 			swal("Good job!", "You shared this!", "success");
 		}).error(onError);
 	}

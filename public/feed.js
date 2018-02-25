@@ -101,7 +101,8 @@ class Feed extends HTMLElement {
         
         if(! this.filter(post)) return; //filter
         
-        let authorPicUrl = (post.author && post.author.picUrl) ? post.author.picUrl: "./assets/img_avatar.png";
+        let authorPicUrl = (post.author && post.author.picUrl) ? post.author.picUrl:
+         "https://www.w3schools.com/howto/img_avatar.png";
         let hashtags = '';
         post.hashtags.forEach(hashtag=>hashtags+=`<a href='#' onclick='return window.search("${hashtag}")'>${hashtag} </a> `)
         let internshipBadge = (post.hashtags.join().includes('intern')) ? `<div class='badge-card'>INTERNSHIP</div>` : '';

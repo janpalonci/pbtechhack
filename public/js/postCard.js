@@ -2,7 +2,8 @@ console.log('post card online');
 $(document).ready(()=>{
 
 
-const postURL = 'http://localhost:3000/posts';
+let postURL = 'http://localhost:3000/posts';
+if(window.location.href.includes('ngrok')) postURL = window.location.href + '/posts'
 let loggedInLinkedIn = window.Cookies.get('linkedin');
 let loggedInFB = window.Cookies.get('facebook');
 let hashtags = [];
