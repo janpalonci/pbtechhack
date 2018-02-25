@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+	<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
 
-    <title></title>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<title></title>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<!-- Bootstrap core CSS -->
+		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+		<!-- Custom fonts for this template -->
+		<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
-    <!-- Custom styles for this template -->
-    <link href="css/agency.css" rel="stylesheet">
-    <link href="scss/form.min.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="css/agency.css" rel="stylesheet">
+		<link href="scss/form.min.css" rel="stylesheet">
 		<link href="scss/slider.min.css" rel="stylesheet">
 
 
@@ -36,109 +36,125 @@
 		authorize: true
 		lang:      en_US
 		</script>
-  </head>
+	</head>
 
-  <body id="page-top">
-      <script>
-          window.fbAsyncInit = function() {
-            FB.init({
-              appId            : '172889676673331',
-              autoLogAppEvents : true,
-              xfbml            : true,
-              version          : 'v2.12'
-            });
-          };
-        
-          (function(d, s, id){
-             var js, fjs = d.getElementsByTagName(s)[0];
-             if (d.getElementById(id)) {return;}
-             js = d.createElement(s); js.id = id;
-             js.src = "https://connect.facebook.net/en_US/sdk.js";
-             fjs.parentNode.insertBefore(js, fjs);
-           }(document, 'script', 'facebook-jssdk'));
-        </script>
+	<body id="page-top">
+			<script>
+					window.fbAsyncInit = function() {
+						FB.init({
+							appId            : '172889676673331',
+							autoLogAppEvents : true,
+							xfbml            : true,
+							version          : 'v2.12'
+						});
+					};
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="mainNav">
-      <div class="container ">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">PBC STEM</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <div class='input-group'>
-              <input onkeyup='search()' id='search' class='input-group-text' type="text" name="search" placeholder="Search.."></input>
-              <button  onclick='search()' class='btn btn-primary'>
-                  <i class="fa fa-search"></i>
-              </button>
-          </div>
-            
-          <ul class="navbar-nav text-uppercase">
-            <li class="nav-item">
-              <a class="nav-link" onclick='handleClickFilter("class")' style='cursor:pointer'>Companies</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" onclick='handleClickFilter("company")' style='cursor:pointer'>Classrooms</a>
-            </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" >Engineering</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" >Mathematics</a>
-            </li> -->
-          </ul>
-        </div>
-      </div>
-    </nav>
+					(function(d, s, id){
+						 var js, fjs = d.getElementsByTagName(s)[0];
+						 if (d.getElementById(id)) {return;}
+						 js = d.createElement(s); js.id = id;
+						 js.src = "https://connect.facebook.net/en_US/sdk.js";
+						 fjs.parentNode.insertBefore(js, fjs);
+					 }(document, 'script', 'facebook-jssdk'));
+				</script>
 
-    <!-- Header -->
-    <header class="masthead">
-      <div class="container">
-        <div class="intro-text">
-          <div class="intro-lead-in font-weight-bold animated fadeInDown">PBC STEM</div>
-          <div class="intro-heading text-uppercase font-weight-bold animated fadeInDown">Impacting the generation of tomorrow</div>
-             <a class="btn btn-primary btn-xl text-uppercase  animated fadeInLeft" 
-             style='border-radius: 40px;'
-             onclick='handleClickTeacher("company")'>
-             I am teacher
-            </a>
-             <a class="btn btn-primary btn-xl text-uppercase  animated fadeInRight" 
-             style='border-radius: 40px;'
-             onclick='handleClickTeacher("class")'>
-             I am Professional
-            </a>
-        </div>
-      </div>
-    </header>
-      <br />
+		<!-- Navigation -->
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top" id="mainNav">
+			<div class="container ">
+				<a class="navbar-brand js-scroll-trigger" href="#page-top">PBC STEM</a>
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					Menu
+					<i class="fa fa-bars"></i>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<div class='input-group'>
+							<input onkeyup='search()' id='search' class='input-group-text' type="text" name="search" placeholder="Search.."></input>
+							<button  onclick='search()' class='btn btn-primary'>
+									<i class="fa fa-search"></i>
+							</button>
+					</div>
 
-    <!-- Listings -->
-      
-      <div  class="container">
+					<ul class="navbar-nav text-uppercase">
+						<li class="nav-item">
+							<a class="nav-link" onclick='handleClickFilter("class")' style='cursor:pointer'>Companies</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" onclick='handleClickFilter("company")' style='cursor:pointer'>Classrooms</a>
+						</li>
+						<!-- <li class="nav-item">
+							<a class="nav-link js-scroll-trigger" >Engineering</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" >Mathematics</a>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
 
-        <main-feed id='main-feed' class='row' style='    margin-top: 100px;'></main-feed>
-          
-      </div>
-      
+		<!-- Header -->
+		<header class="masthead">
+			<div class="container">
+				<div class="intro-text">
+					<div class="intro-lead-in font-weight-bold animated fadeInDown">PBC STEM</div>
+					<div class="intro-heading text-uppercase font-weight-bold animated fadeInDown">Impacting the generation of tomorrow</div>
+						 <a class="btn btn-primary btn-xl text-uppercase  animated fadeInLeft"
+						 style='border-radius: 40px;'
+						 onclick='handleClickTeacher("company")'>
+						 I am teacher
+						</a>
+						 <a class="btn btn-primary btn-xl text-uppercase  animated fadeInRight"
+						 style='border-radius: 40px;'
+						 onclick='handleClickTeacher("class")'>
+						 I am Professional
+						</a>
+				</div>
+			</div>
+		</header>
+			<br />
+
+		<!-- Listings -->
+
+			<div  class="container">
+
+				<main-feed id='main-feed' class='row' style='    margin-top: 100px;'></main-feed>
+
+			</div>
+
 
 <!-- Modal -->
 <button id="post-card-toggle" class="btn btn-primary">Post</button>
-
 	 <div class='post-card animated fadeInLeft' id="post-card-loggedIn" style='top: 10%;'>
 		 <h2>Post your card</h2>
+
 		 <form>
+			 <div class="card-type">
+					<span>I am</span>
+					<br>
+				<input id="card-classroom" type="radio" name="type" checked/> <span>Teacher</span>
+				<br>
+			 <input id="card-pro" type="radio" name="type" /> <span>Professional</span>
+			 </div>
+			 <div id="card-pro-selected">
+				 <span>I offer</span>
+				 <br>
+				 <input type="checkbox" id="card-internship"> <span>Internship</span>
+				 <br>
+				 <input type="checkbox" id="card-externship"> <span>Externship</span>
+				 <br>
+				 <input type="checkbox" id="card-mentorship"> <span>Mentorship</span>
+			 </div>
 			 <input id="card-first-name" type="text" name="fistName" placeholder="Your name" />
 			 <input id="card-last-name" type="text" name="lastName" placeholder="Your last name" />
-			 <input id="card-type" type="text" name="type" placeholder="Teacher or Professional" />
+
 			 <input id="card-title" type="text" name="title" placeholder="Title" />
 			 <input id="card-picture-url" type="text" name="picUrl" placeholder="Picture URL" />
 			 <input id="card-email" type="email" name="email" placeholder="Email" />
 			 <input id="card-phone" type="url" name="phone" placeholder="Phone" />
 			 <textarea id="card-description" placeholder="Description" name="description"></textarea>
-			 <input id="card-hashtags" type="text" name="hashtags" placeholder="#hashtags">
-			 <input type="button" id="post-card-submit" value="Post!" />
-			 <input type="button" id="post-card-cancel" value="Cancel" />
+			 <input id="card-hashtags" type="text" name="hashtags" placeholder="#stem,#pbc">
+			 <input type="button" id="post-card-submit" value="Post" />
+			 <input type="button" class="post-card-cancel" value="Cancel" />
 		 </form>
 	 </div>
 
@@ -148,79 +164,80 @@
  <br>
  <script type="in/Login"></script>
  <br>
- <fb:login-button
+ <!-- <fb:login-button
 	 scope="public_profile,email"
 	 onlogin="checkLoginState()">
- </fb:login-button>
+ </fb:login-button> -->
+ <br><br>
+ <input type="button" class="post-card-cancel" value="Cancel" />
 	</div>
-   
-
-    
-
-    <!-- Footer -->
-    <footer class='m-4'>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <span class="copyright"><img id="district"src="img/logos/districtlogo.png"> All Rights Reserved 2018<br />
-              (561) 434-8000 | (866) 930-8402</span>
-          </div>
-          <div class="col-md-4">
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="https://twitter.com/pbcsd">
-                  <i class="fa fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://www.facebook.com/PBCSD/">
-                  <i class="fa fa-facebook"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-linkedin"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <ul class="list-inline quicklinks">
-              <li class="list-inline-item">
-                <p>Fulton-Holland Educational Services Center<br />
-                   3300 Forest Hill Boulevard<br />
-                   West Palm Beach, FL 33406</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
 
 
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+		<!-- Footer -->
+		<footer class='m-4'>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<span class="copyright"><img id="district"src="img/logos/districtlogo.png"> All Rights Reserved 2018<br />
+							<a href="tel:(561) 434-8000">(561) 434-8000</a> | <a href="tel:(866) 930-8402">(866) 930-8402</a></span>
+					</div>
+					<div class="col-md-4">
+						<ul class="list-inline social-buttons">
+							<li class="list-inline-item">
+								<a href="https://twitter.com/pbcsd">
+									<i class="fa fa-twitter"></i>
+								</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="https://www.facebook.com/PBCSD/">
+									<i class="fa fa-facebook"></i>
+								</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="#">
+									<i class="fa fa-linkedin"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<ul class="list-inline quicklinks">
+							<li class="list-inline-item">
+								<p>Fulton-Holland Educational Services Center<br />
+									 3300 Forest Hill Boulevard<br />
+									 West Palm Beach, FL 33406</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
 
-    <!-- Contact form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
 
-    <!-- Custom scripts for this template -->
-    <script src="js/agency.min.js"></script>
-    <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
 
-    
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./feed.js"></script>
+		<!-- Bootstrap core JavaScript -->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <script src='./js/postCard.js'></script>
+		<!-- Plugin JavaScript -->
+		<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  </body>
+		<!-- Contact form JavaScript -->
+		<script src="js/jqBootstrapValidation.js"></script>
+		<script src="js/contact_me.js"></script>
+
+		<!-- Custom scripts for this template -->
+		<script src="js/agency.min.js"></script>
+		<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+
+
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="./feed.js"></script>
+		<script src='./js/postCard.js'></script>
+
+	</body>
 
 </html>
